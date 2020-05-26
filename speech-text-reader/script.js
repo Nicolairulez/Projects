@@ -47,6 +47,10 @@ const data = [
         text: "I Want To Go Home"
     },
     {
+        image: './img/school.jpg',
+        text: "I Want To Go To School"
+    },
+    {
         image: './img/grandma.jpg',
         text: "I Want To Go To Grandmas"
     }
