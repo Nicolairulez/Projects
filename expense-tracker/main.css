@@ -140,6 +140,14 @@ input[type='number'] {
 
 }
 
+.balance .minus {
+    color: #c0392b;
+}
+
+.balance .plus {
+    color: #2ecc71;
+}
+
 .delete-btn {
     cursor: pointer;
     background-color: #e74c3c;

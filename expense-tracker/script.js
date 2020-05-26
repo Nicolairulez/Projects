@@ -8,7 +8,7 @@ const amount = document.getElementById('amount');
 
 
 
-const localStorageTransactions = localStorage.getItem('transactions');
+const localStorageTransactions = JSON.parse(localStorage.getItem('transactions'));
 
 
 
@@ -79,6 +79,9 @@ function updateValues() {
         .filter(item => item < 0)
         .reduce((acc, item) => (acc += item), 0) * -1).toFixed(2);
 
+
+
+
     balance.innerText = `$${total}`;
     money_plus.innerText = `$${income}`;
     money_minus.innerText = `$${expense}`;
@@ -89,7 +92,7 @@ function updateValues() {
 function removeTransaction(id) {
     transactions = transactions.filter(transaction => transaction.id !== id);
 
-    updateLocalStorage();
+    updateLocalStorage()
     init();
 }
 
