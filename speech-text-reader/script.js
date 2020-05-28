@@ -80,8 +80,8 @@ function createBox(item) {
         speakText();
 
         // Add click effect
-        box.classList.add('active');
-        setTimeout(() => box.classList.remove('active'), 800);
+        box.classList.add('box-active');
+        setTimeout(() => box.classList.remove('box-active'), 800);
 
     });
 
@@ -121,6 +121,12 @@ function speakText() {
     speechSynthesis.speak(message);
 }
 
+// Set voice
+
+function setVoice(e) {
+    message.voice = voices.find(voice => voice.name === e.target.value);
+}
+
 
 // Voices changed
 
@@ -132,6 +138,16 @@ toggleBtn.addEventListener('click', () => document.getElementById('text-box').cl
 // Close button
 
 closeBtn.addEventListener('click', () => document.getElementById('text-box').classList.remove('show'));
+
+// Change voice
+voicesSelect.addEventListener('change', setVoice);
+
+// Read text
+
+readBtn.addEventListener('click', () => {
+    setTextMessage(textarea.value);
+    speakText();
+})
 
 getVoices();
 
